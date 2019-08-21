@@ -1,6 +1,6 @@
-name: "MyLabJournal"
+name: "Gas Power"
 navbar:
-  title: "MyLabJournal"
+  title: "Gas Power"
   left:
     - text: "Home"
       href: index.html
