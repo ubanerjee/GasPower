@@ -11,7 +11,7 @@
 
 
 
-<title>Natural Gas Power</title>
+<title>Generation</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -260,6 +263,90 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -267,6 +354,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -307,42 +404,67 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Natural Gas Power</h1>
+<h1 class="title toc-ignore">Generation</h1>
 
 </div>
 
 
-<style type="text/css">
-.title {
-  display: none;
-}
-
-#getting-started img {
-  margin-right: 10px;
-}
-
-</style>
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
-<h1 id="natural-gas-power-generation-journal"><strong>Natural Gas Power Generation Journal</strong></h1>
-<p>Greenhouse gas emissions (GHG) has been one of the largest contribution along with technological changes to the increase of cogeneration,which repurposes heat recovered from gas-powered turbines. Over the last 20 years, the use of coal in electricity generation has fallen significantly, from 15% of total generation in 1996, to 11% by 2015. The use of natural gas in electricity generation has increased significantly, from 3% of total generation in 1996, to 11% by 2015 ## Frequency of update</p>
-<ol style="list-style-type: decimal">
-<li><p>Data had been collected from different public source directory</p></li>
-<li><p>Use of R and RMarkdown has been used for Blog/journal preparation.</p></li>
-<li><p>Most of the data are updated yearly .</p></li>
-<li><p>Accuracy of data has been taken care.</p></li>
-<li><p>Graphs and analysis are for knowledge and curosity.</p></li>
-</ol>
+<p>Most of the combine cycle generation plant’s running in Ontario depends upon number of factors:<br />
+1. As system stability. 2. During peak hours. 3. Extreme temperature conditions 4. Other environmental factors.</p>
+<p>Through number of day’s run we can analyse various syatem performance.</p>
+<div id="yearly-generation-stats" class="section level1">
+<h1>Yearly Generation stats:</h1>
+<p>2018 | 7 | 23 Last compiled: 2019-08-23</p>
+<p>R was used to compile data and count the number of days the plant were running as per the demand.</p>
+<div id="goreway" class="section level2">
+<h2>Goreway</h2>
+<div id="goreway-power-station-yearly-generation-2010---2018" class="section level4">
+<h4>Goreway Power Station yearly generation 2010 - 2018</h4>
+<p><a href="Goreway_Generation_10_18.html">Goreway Generation 2010-2018</a></p>
 </div>
-<div class="col-sm-6">
-
-<div id="energy-data-analysis-using-r-and-python" class="section level3">
-<h3><a href="https://ubanerjee.github.io/GasPower/">Energy Data Analysis using R and Python</a></h3>
-<p><a href = "https://ubanerjee.github.io/GasPower/"> <img src="images/logo.png" /></p>
+</div>
+<div id="portlands" class="section level2">
+<h2>Portlands</h2>
+<div id="portlands-energy-centre-yearly-generation-2010---2018" class="section level4">
+<h4>Portlands Energy Centre yearly generation 2010 - 2018</h4>
+</div>
+<div id="comming-soon" class="section level3">
+<h3><em>Comming Soon</em></h3>
+</div>
+</div>
+<div id="greenfield" class="section level2">
+<h2>Greenfield</h2>
+<div id="greenfield-energy-centre-yearly-generation-2010---2018" class="section level4">
+<h4>Greenfield Energy Centre yearly generation 2010 - 2018</h4>
+</div>
+<div id="comming-soon-1" class="section level3">
+<h3><em>Comming Soon</em></h3>
+</div>
+</div>
+<div id="brighton-beach" class="section level2">
+<h2>Brighton Beach</h2>
+<div id="brighton-beach-generating-station-yearly-generation-2010---2018" class="section level4">
+<h4>Brighton Beach Generating Station yearly generation 2010 - 2018</h4>
+</div>
+<div id="comming-soon-2" class="section level3">
+<h3><em>Comming Soon</em></h3>
+</div>
+</div>
+<div id="halton-hills" class="section level2">
+<h2>Halton Hills</h2>
+<div id="halton-hills-combined-cycle-plant-yearly-generation-2010---2018" class="section level4">
+<h4>Halton Hills Combined Cycle Plant yearly generation 2010 - 2018</h4>
+</div>
+<div id="comming-soon-3" class="section level3">
+<h3><em>Comming Soon</em></h3>
+</div>
+</div>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 

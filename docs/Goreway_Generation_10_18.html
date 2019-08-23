@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Generation Of Goreway Power Station from the year 2010 - 2018</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Gas Power</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Generation.html">Generation</a>
+</li>
+<li>
+  <a href="Run_Stats.html">Run Stats</a>
+</li>
+<li>
+  <a href="About.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Generation Of Goreway Power Station from the year 2010 - 2018</h1>
+
+</div>
+
+
+<div id="generation-data-downloaded-from-ieso-site-httpwww.ieso.caenpower-datadata-directory" class="section level3">
+<h3>Generation data downloaded from IESO site ( <a href="http://www.ieso.ca/en/Power-Data/Data-Directory" class="uri">http://www.ieso.ca/en/Power-Data/Data-Directory</a>)</h3>
+<pre class="r"><code>library(rlang)
+library(tidyverse)
+library(lubridate)
+library(zoo)
+library(readxl)</code></pre>
+<pre class="r"><code>G10&lt;-read_excel(&quot;GOC-2010.xlsx&quot;)</code></pre>
+<pre><code>## New names:
+## * `` -&gt; ...3</code></pre>
+<pre class="r"><code>head(G10,n=5) # Head gives the first five rows of the data . Its gives generating units available .</code></pre>
+<pre><code>## # A tibble: 5 x 114
+##   DATE                 HOUR ...3  ABKENORA AGUASABON ALEXANDER AMARANTH
+##   &lt;dttm&gt;              &lt;dbl&gt; &lt;lgl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 2010-01-01 00:00:00     1 NA          14         2        54       18
+## 2 2010-01-01 00:00:00     2 NA          14        19        54       15
+## 3 2010-01-01 00:00:00     3 NA          14        26        54       19
+## 4 2010-01-01 00:00:00     4 NA          14        26        54       25
+## 5 2010-01-01 00:00:00     5 NA          13        26        53       33
+## # ... with 107 more variables: ANDREWS &lt;lgl&gt;, APIROQUOIS &lt;dbl&gt;,
+## #   ARNPRIOR &lt;dbl&gt;, ATIKOKAN &lt;dbl&gt;, AUBREYFALLS &lt;dbl&gt;, BARRETT &lt;dbl&gt;,
+## #   BECK1 &lt;dbl&gt;, BECK2 &lt;dbl&gt;, `BECK2 PGS` &lt;dbl&gt;, `BRIGHTON BEACH` &lt;dbl&gt;,
+## #   BRUCEA &lt;dbl&gt;, BRUCEB &lt;dbl&gt;, CALSTOCKGS &lt;lgl&gt;, CAMERONFALLS &lt;dbl&gt;,
+## #   CANYON &lt;dbl&gt;, CARDINAL &lt;dbl&gt;, CARIBOUFALLS &lt;dbl&gt;, CARMICHAEL &lt;dbl&gt;,
+## #   CHATSFALLS &lt;dbl&gt;, CHENAUX &lt;dbl&gt;, CLERGUE &lt;dbl&gt;, `DA WATSON` &lt;dbl&gt;,
+## #   DARLINGTON &lt;dbl&gt;, DECEWFALLS &lt;dbl&gt;, DECEWND1 &lt;dbl&gt;, DESJOACHIMS &lt;dbl&gt;,
+## #   DESTEC &lt;dbl&gt;, DILLON &lt;lgl&gt;, DOWCHEMICAL &lt;dbl&gt;, DPNTMTLND &lt;dbl&gt;,
+## #   `DUNFORD GS` &lt;lgl&gt;, EARFALLS &lt;lgl&gt;, `EAST WINDSOR` &lt;dbl&gt;,
+## #   FORTFRANCSWC &lt;dbl&gt;, GARTSHORE &lt;dbl&gt;, GOSFIELDWGS &lt;lgl&gt;, `GREENFIELD
+## #   ENERGY CENTRE` &lt;dbl&gt;, GTAA &lt;dbl&gt;, HALTONHILLS &lt;dbl&gt;, HARMON &lt;dbl&gt;,
+## #   HARRIS &lt;lgl&gt;, HOLDEN &lt;dbl&gt;, HOLINGSWTH &lt;dbl&gt;, KAKABEKA &lt;dbl&gt;,
+## #   KAPGS &lt;lgl&gt;, KINGSBRIDGE &lt;dbl&gt;, KIPLING &lt;dbl&gt;, LAKESUPERIOR &lt;dbl&gt;,
+## #   LAKEVIEW &lt;lgl&gt;, LAMBTON &lt;dbl&gt;, LENNOX &lt;dbl&gt;, LITTLELONG &lt;dbl&gt;,
+## #   LONGSAULTE &lt;dbl&gt;, LOWERNOTCH &lt;dbl&gt;, MACKAYGS &lt;dbl&gt;, MALETKRAFT &lt;dbl&gt;,
+## #   MANITOUFALLS &lt;dbl&gt;, MISSION &lt;lgl&gt;, MTNCHUTE &lt;dbl&gt;, NAGAGAMI &lt;lgl&gt;,
+## #   NANTICOKE &lt;dbl&gt;, NIPIGONGS &lt;lgl&gt;, NORTHBAYGS &lt;lgl&gt;, NPCOCHRANE &lt;dbl&gt;,
+## #   NPIROQFALLS &lt;dbl&gt;, NPKIRKLAND &lt;dbl&gt;, OTTERRAPIDS &lt;dbl&gt;,
+## #   PICKERINGA &lt;dbl&gt;, PICKERINGB &lt;dbl&gt;, PINEPORTAGE &lt;dbl&gt;, `PORT
+## #   ALMA` &lt;dbl&gt;, `PORT BURWELL` &lt;dbl&gt;, PORTALMA &lt;lgl&gt;, PORTLANDS &lt;dbl&gt;,
+## #   PRINCEFARM &lt;dbl&gt;, RAYNER &lt;dbl&gt;, REDROCK &lt;dbl&gt;, `RIPLEY SOUTH` &lt;dbl&gt;,
+## #   SAUNDERS &lt;dbl&gt;, SCOTTGLP &lt;lgl&gt;, SILVERFALLS &lt;dbl&gt;, `SITHE
+## #   GOREWAY` &lt;dbl&gt;, SMOKY &lt;dbl&gt;, SPENCE &lt;lgl&gt;, STCLAIRCGS &lt;dbl&gt;,
+## #   STEEPHILL &lt;lgl&gt;, STEWARTVLE &lt;dbl&gt;, TADOUGLAS &lt;dbl&gt;, TAOHSC &lt;dbl&gt;,
+## #   TASARNIA &lt;dbl&gt;, TAWINDSOR &lt;dbl&gt;, TCKAP &lt;dbl&gt;, TCNIPIGON &lt;dbl&gt;,
+## #   TCNORTHBAY &lt;dbl&gt;, TCPLCALSTOCK &lt;dbl&gt;, TCPLTUNIS &lt;dbl&gt;,
+## #   THOROLDCGS &lt;dbl&gt;, THUNDERBAY &lt;dbl&gt;, TUNISGS &lt;lgl&gt;, UMBATAFALLS &lt;dbl&gt;,
+## #   ...</code></pre>
+<pre class="r"><code>#tail(G10,5) # Tail gives last five rows can be useful when data from external source</code></pre>
+<pre class="r"><code>#str(G10) # Str() tells how many rows (observations in statistical R ) and columns ( variables R ) it contains, along with type of data gives </code></pre>
+<pre class="r"><code>#summary(G10$`SITHE GOREWAY`) # summary function gets the statistical summary of the dataset by just running on either a column or the complete dataset</code></pre>
+<pre class="r"><code>class(G10) # gives class/ data type of argument</code></pre>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>dim(G10) # Dimensions of the data set </code></pre>
+<pre><code>## [1] 8761  114</code></pre>
+<pre class="r"><code>#is.na(G10)</code></pre>
+<pre class="r"><code>table(is.na(G10)) # Gives total number of missing values </code></pre>
+<pre><code>## 
+##  FALSE   TRUE 
+## 850826 147928</code></pre>
+<pre class="r"><code>#colSums(is.na(G10)) # checking variables in which missing values are present</code></pre>
+<pre class="r"><code>sum(is.na(G10$`SITHE GOREWAY`)) # shows number of missing values in `SITHE GOREWAY` </code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>mean(G10$`SITHE GOREWAY`) # Missing values hinders in calculation in a dataset. As only one missing values we try to calculate mean                                                                                                                              generation </code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>mean(G10$`SITHE GOREWAY`,na.rm=TRUE) # TRUE ignores the missing values whereas .omit removes the missing values </code></pre>
+<pre><code>## [1] 353.6766</code></pre>
+<pre class="r"><code>summary(G10$`SITHE GOREWAY`,na.rm=TRUE)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##     0.0     0.0   324.0   353.7   562.0   930.0       1</code></pre>
+</div>
+<div id="analysis-of-the-data-columns" class="section level2">
+<h2>Analysis of the data columns</h2>
+<div id="date-needs-to-be-changed-to-date-format-." class="section level3">
+<h3>1. Date needs to be changed to Date format .</h3>
+<pre class="r"><code>G10$DATE &lt;- as.Date(G10$DATE, format = &quot;%Y-%m-%d&quot;) # Changing to Date format</code></pre>
+</div>
+<div id="as-the-given-data-is-in-hourly-we-are-grouping-hourly-into-daily-." class="section level3">
+<h3>2. As the given data is in hourly we are grouping hourly into daily .</h3>
+</div>
+<div id="total-daily-generation-gives-a-broad-picture-of-the-data-.-here-we-considering-sithe-goreway-goreway-power-station-for-study-purpose." class="section level3">
+<h3>Total daily generation gives a broad picture of the data . Here we considering Sithe Goreway ( Goreway Power Station ) for study purpose.</h3>
+<pre class="r"><code>Dz_10&lt;-G10 %&gt;% group_by(DATE) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_10) </code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   DATE       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01             0    24
+## 2 2010-01-02             0    24
+## 3 2010-01-03            11    24
+## 4 2010-01-04          6423    24
+## 5 2010-01-05          3168    24
+## 6 2010-01-06          5513    24</code></pre>
+<pre class="r"><code>#library(ggplot2)
+#plot&lt;-ggplot(Dz_10, aes(x=~Date,y=~Goreway_Total)) + geom_line()
+#plot</code></pre>
+<pre class="r"><code>#library(plotly)
+#plot_ly(Dz_10, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines+markers&#39;)
+#plot_ly(Dz_10, x=~DATE) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2010&#39;)</code></pre>
+</div>
+<div id="similarly-grouping-hourly-mw-to-daily-was-performed-from-the-year-2011-to-2018" class="section level3">
+<h3>Similarly grouping hourly MW to daily was performed from the year 2011 to 2018</h3>
+</div>
+<div id="year-2011" class="section level3">
+<h3>Year 2011</h3>
+<pre class="r"><code>G11&lt;-read_excel(&quot;GOC-2011.xlsx&quot;)</code></pre>
+<pre><code>## New names:
+## * `` -&gt; ...3</code></pre>
+<pre class="r"><code>G11$DATE &lt;- as.Date(G11$DATE, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_11&lt;-G11 %&gt;% group_by(DATE) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_11)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   DATE       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2011-01-01             0    24
+## 2 2011-01-02             0    24
+## 3 2011-01-03          5807    24
+## 4 2011-01-04          8077    24
+## 5 2011-01-05         10289    24
+## 6 2011-01-06         12158    24</code></pre>
+<p>##plot_ly(Dz_11, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=‘lines+markers’)</p>
+<pre class="r"><code>#plot_ly(Dz_11, x=~DATE) %&gt;% add_trace(y=~Goreway_Total, mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2011&#39;)</code></pre>
+</div>
+<div id="year-2012" class="section level3">
+<h3>Year 2012</h3>
+<pre class="r"><code>G12&lt;-read_excel(&quot;GOC-2012.xlsx&quot;)
+G12$DATE &lt;- as.Date(G12$DATE, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_12&lt;-G12 %&gt;% group_by(DATE) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_12)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   DATE       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2012-01-01             0    24
+## 2 2012-01-02          5645    24
+## 3 2012-01-03         16596    24
+## 4 2012-01-04         17918    24
+## 5 2012-01-05          8894    24
+## 6 2012-01-06          3618    24</code></pre>
+<pre class="r"><code>#plot_ly(Dz_12, x=~DATE) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2012&#39;)</code></pre>
+</div>
+<div id="year-2013" class="section level3">
+<h3>Year 2013</h3>
+<pre class="r"><code>G13&lt;-read_excel(&quot;GOC-2013.xlsx&quot;)</code></pre>
+<pre><code>## Warning in read_fun(path = enc2native(normalizePath(path)), sheet_i =
+## sheet, : Expecting logical in DL8767 / R8767C116: got &#39;pppp&#39;</code></pre>
+<pre><code>## New names:
+## * `` -&gt; ...113
+## * `` -&gt; ...114
+## * `` -&gt; ...115
+## * `` -&gt; ...116</code></pre>
+<pre class="r"><code>G13$Date &lt;- as.Date(G13$Date, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_13&lt;-G13 %&gt;% group_by(Date) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_13)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2013-01-01             0    24
+## 2 2013-01-02         11716    24
+## 3 2013-01-03         14626    24
+## 4 2013-01-04         10032    24
+## 5 2013-01-05          4083    24
+## 6 2013-01-06          4760    24</code></pre>
+<pre class="r"><code>#plot_ly(Dz_13, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2013&#39;)</code></pre>
+</div>
+<div id="year-2014" class="section level3">
+<h3>Year 2014</h3>
+<pre class="r"><code>G14&lt;-read_excel(&quot;GOC-2014.xlsx&quot;)
+G14$Date &lt;- as.Date(G14$Date, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_14&lt;-G14 %&gt;% group_by(Date) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_14)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2014-01-01          3114    24
+## 2 2014-01-02         15335    24
+## 3 2014-01-03         18671    24
+## 4 2014-01-04         11042    24
+## 5 2014-01-05          5903    24
+## 6 2014-01-06          5443    24</code></pre>
+<pre class="r"><code>#plot_ly(Dz_14, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2014&#39;)</code></pre>
+</div>
+<div id="year-2015" class="section level3">
+<h3>Year 2015</h3>
+<pre class="r"><code>G15&lt;-read_excel(&quot;GOC-2015.xlsx&quot;)
+G15$Date &lt;- as.Date(G15$Date, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_15&lt;-G15 %&gt;% group_by(Date) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_15)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2015-01-01             0    24
+## 2 2015-01-02          3358    24
+## 3 2015-01-03          3290    24
+## 4 2015-01-04             0    24
+## 5 2015-01-05          5658    24
+## 6 2015-01-06         11606    24</code></pre>
+<pre class="r"><code>#plot_ly(Dz_15, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2015&#39;)</code></pre>
+</div>
+<div id="year-2016" class="section level3">
+<h3>Year 2016</h3>
+<pre class="r"><code>G16&lt;-read_excel(&quot;GOC-2016.xlsx&quot;)</code></pre>
+<pre><code>## New names:
+## * WHITEDOG -&gt; WHITEDOG...167
+## * `WOLFE ISLAND` -&gt; `WOLFE ISLAND...168`
+## * `YORKCGS-G1` -&gt; `YORKCGS-G1...169`
+## * `YORKCGS-G2` -&gt; `YORKCGS-G2...170`
+## * ZURICH -&gt; ZURICH...171
+## * ... and 5 more problems</code></pre>
+<pre class="r"><code>G16$Date &lt;- as.Date(G16$Date, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_16&lt;-G16 %&gt;% group_by(Date) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_16)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2016-01-01             0    24
+## 2 2016-01-02             0    24
+## 3 2016-01-03          2376    24
+## 4 2016-01-04          7144    24
+## 5 2016-01-05          7488    24
+## 6 2016-01-06             0    24</code></pre>
+<pre class="r"><code>#plot_ly(Dz_16, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2016&#39;)</code></pre>
+</div>
+<div id="year-2017" class="section level3">
+<h3>Year 2017</h3>
+<pre class="r"><code>G17&lt;-read_excel(&quot;GOC-2017.xlsx&quot;)
+G17$Date &lt;- as.Date(G17$Date, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_17&lt;-G17 %&gt;% group_by(Date) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_17)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2017-01-01             0    24
+## 2 2017-01-02             0    24
+## 3 2017-01-03             0    24
+## 4 2017-01-04             0    24
+## 5 2017-01-05             0    24
+## 6 2017-01-06             0    24</code></pre>
+<pre class="r"><code>#plot_ly(Dz_17, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2017&#39;)</code></pre>
+</div>
+<div id="year-2018" class="section level3">
+<h3>Year 2018</h3>
+<pre class="r"><code>G18&lt;-read_excel(&quot;GOC-2018.xlsx&quot;)
+Dz_18&lt;-G18 %&gt;% group_by(Date) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_18)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date                Goreway_Total     n
+##   &lt;dttm&gt;                      &lt;dbl&gt; &lt;int&gt;
+## 1 2018-01-01 00:00:00             0    24
+## 2 2018-01-02 00:00:00             0    24
+## 3 2018-01-03 00:00:00          5390    24
+## 4 2018-01-04 00:00:00          5185    24
+## 5 2018-01-05 00:00:00          1401    24
+## 6 2018-01-06 00:00:00          5002    24</code></pre>
+<pre class="r"><code>#plot_ly(Dz_18, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;) %&gt;% layout(title=&#39;Goreway Generation 2018&#39;)</code></pre>
+</div>
+</div>
+<div id="combining-the-data-from-2013-to-2018-and-making-a-single-data-file" class="section level2">
+<h2>Combining the data from 2013 to 2018 and making a single data file</h2>
+<pre class="r"><code>Dz_a13&lt;-rbind(Dz_13,Dz_14,Dz_15,Dz_16,Dz_17,Dz_18)
+
+str(Dz_a13)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    2192 obs. of  3 variables:
+##  $ Date         : Date, format: &quot;2013-01-01&quot; &quot;2013-01-02&quot; ...
+##  $ Goreway_Total: num  0 11716 14626 10032 4083 ...
+##  $ n            : int  24 24 24 24 24 24 24 24 24 24 ...</code></pre>
+<div id="date-variable-name-from-2010-to-2012-are-all-caps-." class="section level3">
+<h3>Date variable name from 2010 to 2012 are all caps .</h3>
+</div>
+<div id="changing-as-per-date-which-is-from-2013-to-2018." class="section level3">
+<h3>Changing as per “Date” which is from 2013 to 2018.</h3>
+</div>
+<div id="section" class="section level3">
+<h3>2010</h3>
+<pre class="r"><code>G10&lt;-read_excel(&quot;GOC-2010.xlsx&quot;)</code></pre>
+<pre><code>## New names:
+## * `` -&gt; ...3</code></pre>
+<pre class="r"><code>G10$DATE &lt;- as.Date(G10$DATE, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_10&lt;-G10 %&gt;% group_by(DATE) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+colnames(Dz_10)[colnames(Dz_10)==&quot;DATE&quot;] &lt;- &quot;Date&quot;
+head(Dz_10)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01             0    24
+## 2 2010-01-02             0    24
+## 3 2010-01-03            11    24
+## 4 2010-01-04          6423    24
+## 5 2010-01-05          3168    24
+## 6 2010-01-06          5513    24</code></pre>
+</div>
+<div id="section-1" class="section level3">
+<h3>2011</h3>
+<pre class="r"><code>G11&lt;-read_excel(&quot;GOC-2011.xlsx&quot;)</code></pre>
+<pre><code>## New names:
+## * `` -&gt; ...3</code></pre>
+<pre class="r"><code>G11$DATE &lt;- as.Date(G11$DATE, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_11&lt;-G11 %&gt;% group_by(DATE) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+colnames(Dz_11)[colnames(Dz_11)==&quot;DATE&quot;] &lt;- &quot;Date&quot;
+head(Dz_11)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2011-01-01             0    24
+## 2 2011-01-02             0    24
+## 3 2011-01-03          5807    24
+## 4 2011-01-04          8077    24
+## 5 2011-01-05         10289    24
+## 6 2011-01-06         12158    24</code></pre>
+</div>
+<div id="section-2" class="section level3">
+<h3>2012</h3>
+<pre class="r"><code>G12&lt;-read_excel(&quot;GOC-2012.xlsx&quot;)
+G12$DATE &lt;- as.Date(G12$DATE, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_12&lt;-G12 %&gt;% group_by(DATE) %&gt;% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+colnames(Dz_12)[colnames(Dz_12)==&quot;DATE&quot;] &lt;- &quot;Date&quot;
+head(Dz_12)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2012-01-01             0    24
+## 2 2012-01-02          5645    24
+## 3 2012-01-03         16596    24
+## 4 2012-01-04         17918    24
+## 5 2012-01-05          8894    24
+## 6 2012-01-06          3618    24</code></pre>
+</div>
+<div id="combining-the-data-from-2010-to-2012-and-making-a-single-data-file" class="section level3">
+<h3>Combining the data from 2010 to 2012 and making a single data file</h3>
+<pre class="r"><code>Dz_a10&lt;-rbind(Dz_10,Dz_11,Dz_12)
+head(Dz_a10)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01             0    24
+## 2 2010-01-02             0    24
+## 3 2010-01-03            11    24
+## 4 2010-01-04          6423    24
+## 5 2010-01-05          3168    24
+## 6 2010-01-06          5513    24</code></pre>
+</div>
+<div id="combining-the-data-from-2010-to-2018-and-making-a-single-data-file" class="section level3">
+<h3>Combining the data from 2010 to 2018 and making a single data file</h3>
+<pre class="r"><code>Dz_y18&lt;-rbind(Dz_a10,Dz_a13)
+head(Dz_y18)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01             0    24
+## 2 2010-01-02             0    24
+## 3 2010-01-03            11    24
+## 4 2010-01-04          6423    24
+## 5 2010-01-05          3168    24
+## 6 2010-01-06          5513    24</code></pre>
+<pre class="r"><code>dim(Dz_y18) # Dimensions of the data set</code></pre>
+<pre><code>## [1] 3289    3</code></pre>
+<pre class="r"><code>#table(is.na(Dz_y18)) # Gives total number of missing values </code></pre>
+<pre class="r"><code>#colSums(is.na(Dz_y18)) # checking variables in which missing values are present</code></pre>
+<pre class="r"><code>#write.table(Dz_y18,file=&quot;Output/Goreway_1.csv&quot;,sep=&quot;,&quot;,col.names=TRUE,row.names=F,append=FALSE)</code></pre>
+<pre class="r"><code>Gy_18&lt;-na.omit(Dz_y18)
+head(Gy_18,n=2)</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##   Date       Goreway_Total     n
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01             0    24
+## 2 2010-01-02             0    24</code></pre>
+<pre class="r"><code>colSums(is.na(Gy_18)) # checking variables in which missing values are present</code></pre>
+<pre><code>##          Date Goreway_Total             n 
+##             0             0             0</code></pre>
+</div>
+<div id="plotting-the-generation-from-2010-till-2018" class="section level3">
+<h3>Plotting the generation from 2010 till 2018</h3>
+<pre class="r"><code>library(ggplot2)
+
+plot&lt;-ggplot(Gy_18, aes(x=Date,y=Goreway_Total)) + geom_line()
+plot</code></pre>
+<p><img src="Goreway_Generation_10_18_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<pre class="r"><code>is.data.frame(Gy_18)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>#library(plotly)
+#plot_ly(Gy_18, x=~Date,y=~Goreway_Total)
+
+#plot_ly(Gy_18, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;)</code></pre>
+<pre class="r"><code>Dz_y18$Year &lt;- format(Dz_y18$Date, format = &quot;%Y&quot;)
+Dz_y18$Month_num &lt;- format(Dz_y18$Date, format = &quot;%m&quot;)
+Dz_y18$Day &lt;- format(Dz_y18$Date, format = &quot;%d&quot;)
+
+head(Dz_y18)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   Date       Goreway_Total     n Year  Month_num Day  
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;
+## 1 2010-01-01             0    24 2010  01        01   
+## 2 2010-01-02             0    24 2010  01        02   
+## 3 2010-01-03            11    24 2010  01        03   
+## 4 2010-01-04          6423    24 2010  01        04   
+## 5 2010-01-05          3168    24 2010  01        05   
+## 6 2010-01-06          5513    24 2010  01        06</code></pre>
+</div>
+</div>
+<div id="plotting-the-generation-from-2010-till-2018-1" class="section level2">
+<h2>Plotting the generation from 2010 till 2018</h2>
+<pre class="r"><code>library(ggplot2)
+
+plot&lt;-ggplot(Gy_18, aes(x=Date,y=Goreway_Total)) + geom_line()
+plot</code></pre>
+<p><img src="Goreway_Generation_10_18_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<pre class="r"><code>is.data.frame(Gy_18)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>#library(plotly)
+#plot_ly(Gy_18, x=~Date,y=~Goreway_Total)
+
+#plot_ly(Gy_18, x=~Date) %&gt;% add_trace(y=~Goreway_Total,mode=&#39;lines&#39;)</code></pre>
+<p>###Extract Year,Month and Day and store in separate columns</p>
+<pre class="r"><code>Dz_y18$Year &lt;- format(Dz_y18$Date, format = &quot;%Y&quot;)
+Dz_y18$Month_num &lt;- format(Dz_y18$Date, format = &quot;%m&quot;)
+Dz_y18$Day &lt;- format(Dz_y18$Date, format = &quot;%d&quot;)
+
+head(Dz_y18)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   Date       Goreway_Total     n Year  Month_num Day  
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;
+## 1 2010-01-01             0    24 2010  01        01   
+## 2 2010-01-02             0    24 2010  01        02   
+## 3 2010-01-03            11    24 2010  01        03   
+## 4 2010-01-04          6423    24 2010  01        04   
+## 5 2010-01-05          3168    24 2010  01        05   
+## 6 2010-01-06          5513    24 2010  01        06</code></pre>
+<pre class="r"><code>Gy_18&lt;-na.omit(Dz_y18)
+head(Gy_18,n=2)</code></pre>
+<pre><code>## # A tibble: 2 x 6
+##   Date       Goreway_Total     n Year  Month_num Day  
+##   &lt;date&gt;             &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;
+## 1 2010-01-01             0    24 2010  01        01   
+## 2 2010-01-02             0    24 2010  01        02</code></pre>
+<pre class="r"><code>p_year&lt;-ggplot(Gy_18, aes(x=Year,y=Goreway_Total)) + geom_bar(stat=&quot;identity&quot;, fill=&quot;steelblue&quot;)
+p_year</code></pre>
+<p><img src="Goreway_Generation_10_18_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<pre class="r"><code>Gy_18$Month_num&lt;-as.factor(Gy_18$Month_num)
+str(Gy_18)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    3286 obs. of  6 variables:
+##  $ Date         : Date, format: &quot;2010-01-01&quot; &quot;2010-01-02&quot; ...
+##  $ Goreway_Total: num  0 0 11 6423 3168 ...
+##  $ n            : int  24 24 24 24 24 24 24 24 24 24 ...
+##  $ Year         : chr  &quot;2010&quot; &quot;2010&quot; &quot;2010&quot; &quot;2010&quot; ...
+##  $ Month_num    : Factor w/ 12 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Day          : chr  &quot;01&quot; &quot;02&quot; &quot;03&quot; &quot;04&quot; ...
+##  - attr(*, &quot;na.action&quot;)= &#39;omit&#39; Named int  366 1463 2264
+##   ..- attr(*, &quot;names&quot;)= chr  &quot;366&quot; &quot;1463&quot; &quot;2264&quot;</code></pre>
+<pre class="r"><code>p_month&lt;-ggplot(Gy_18, aes(x=Month_num,y=Goreway_Total)) + geom_bar(stat=&quot;identity&quot;, fill=&quot;steelblue&quot;)
+p_month</code></pre>
+<p><img src="Goreway_Generation_10_18_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

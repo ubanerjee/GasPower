@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Count_2016_Run_</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Gas Power</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Generation.html">Generation</a>
+</li>
+<li>
+  <a href="Run_Stats.html">Run Stats</a>
+</li>
+<li>
+  <a href="About.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Count_2016_Run_</h1>
+
+</div>
+
+
+<pre class="r"><code>library(readxl)
+library(lubridate)
+library(dplyr)
+library(tidyr)</code></pre>
+<p>Natural gas combine cycle plant generation depends upon market demand . Attemp has been made to calculate the number of days plant was supplying power to grid.It is a first attempt for a comparitive study with counting wind generating days</p>
+<pre class="r"><code>#G16&lt;-read_excel(&quot;Output/GOC-2016.xlsx&quot;)
+G16&lt;-read_excel(&quot;GOC-2016.xlsx&quot;)</code></pre>
+<pre><code>## New names:
+## * WHITEDOG -&gt; WHITEDOG...167
+## * `WOLFE ISLAND` -&gt; `WOLFE ISLAND...168`
+## * `YORKCGS-G1` -&gt; `YORKCGS-G1...169`
+## * `YORKCGS-G2` -&gt; `YORKCGS-G2...170`
+## * ZURICH -&gt; ZURICH...171
+## * ... and 5 more problems</code></pre>
+<pre class="r"><code>G16$Date &lt;- as.Date(G16$Date, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_16Total&lt;-G16 %&gt;% group_by(Date) %&gt;% summarize(Total_2016_Gen=sum(`TOTAL`),n=n())
+Dz_16Goreway&lt;-G16 %&gt;% group_by(Date) %&gt;% summarize(Goreway_2016_Total=sum(`SITHE GOREWAY-G11`+
+                                  `SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+Dz_16Halton&lt;-G16 %&gt;% group_by(Date) %&gt;% summarize(Halton_2016_Total=sum(`HALTONHILLS-LT_G1`+`HALTONHILLS-LT_G2`+`HALTONHILLS-LT_G3`),n=n())
+Dz_16Portland&lt;-G16 %&gt;% group_by(Date) %&gt;% summarize(Portlands_2016_Total=sum(`PORTLANDS-G1`+`PORTLANDS-G2`+`PORTLANDS-G3`),n=n())
+Dz_16Greenfeild&lt;-G16 %&gt;% group_by(Date) %&gt;% summarize(GEC_2016_Total=sum(`GREENFIELD ENERGY CENTRE-G1`+
+  `GREENFIELD ENERGY CENTRE-G2`+`GREENFIELD ENERGY CENTRE-G3`+`GREENFIELD ENERGY CENTRE-G4`),n=n())
+Dz_16Brighton&lt;-G16 %&gt;% group_by(Date) %&gt;% summarize(Brigton_2016_Total=sum(`BRIGHTON BEACH`),n=n())
+
+
+head(Dz_16Total)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Total_2016_Gen     n
+##   &lt;date&gt;              &lt;dbl&gt; &lt;int&gt;
+## 1 2016-01-01         414384    24
+## 2 2016-01-02         424701    24
+## 3 2016-01-03         429112    24
+## 4 2016-01-04         482858    24
+## 5 2016-01-05         495795    24
+## 6 2016-01-06         460060    24</code></pre>
+<pre class="r"><code>Dz_16GB&lt;-cbind(Dz_16Total[,-3],Dz_16Goreway[,2],Dz_16Halton[,2],Dz_16Portland[,2],Dz_16Greenfeild[,2],Dz_16Brighton[,2])
+head(Dz_16GB)</code></pre>
+<pre><code>##         Date Total_2016_Gen Goreway_2016_Total Halton_2016_Total
+## 1 2016-01-01         414384                  0                 0
+## 2 2016-01-02         424701                  0                 0
+## 3 2016-01-03         429112               2376              2103
+## 4 2016-01-04         482858               7144              9199
+## 5 2016-01-05         495795               7488             10242
+## 6 2016-01-06         460060                  0              6829
+##   Portlands_2016_Total GEC_2016_Total Brigton_2016_Total
+## 1                    0              0                  0
+## 2                    0              0                  0
+## 3                    0            166                  0
+## 4                 5976          10873               2685
+## 5                 6963           7729               3600
+## 6                    0           4151                  0</code></pre>
+<p>Checking for missing values</p>
+<pre class="r"><code>any(is.na(Dz_16GB))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>sum(is.na(Dz_16GB))</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>colSums(is.na(Dz_16GB)) </code></pre>
+<pre><code>##                 Date       Total_2016_Gen   Goreway_2016_Total 
+##                    0                    0                    1 
+##    Halton_2016_Total Portlands_2016_Total       GEC_2016_Total 
+##                    1                    1                    1 
+##   Brigton_2016_Total 
+##                    1</code></pre>
+<pre class="r"><code>nrow(Dz_16GB)</code></pre>
+<pre><code>## [1] 366</code></pre>
+<pre class="r"><code>a&lt;-na.omit(Dz_16GB)
+any(is.na(a))</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<div id="goreway-power-station" class="section level3">
+<h3>Goreway Power Station</h3>
+<pre class="r"><code>Goreway_U_Status_16&lt;-cut(Dz_16Goreway$Goreway_2016_Total,breaks = c(0,100,10000),labels = c(0,1))
+Goreway_U_Status_16&lt;-cbind(Dz_16Goreway,Goreway_U_Status_16)
+any(is.na(Goreway_U_Status_16))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>Goreway_U_Status_16[is.na(Goreway_U_Status_16)]=0
+head(Goreway_U_Status_16)</code></pre>
+<pre><code>##         Date Goreway_2016_Total  n Goreway_U_Status_16
+## 1 2016-01-01                  0 24                   0
+## 2 2016-01-02                  0 24                   0
+## 3 2016-01-03               2376 24                   1
+## 4 2016-01-04               7144 24                   1
+## 5 2016-01-05               7488 24                   1
+## 6 2016-01-06                  0 24                   0</code></pre>
+<p>Counting of Running/Notrunning</p>
+<pre class="r"><code>library(plyr)
+aa_G_16&lt;-count(Goreway_U_Status_16,&quot;Goreway_U_Status_16&quot;)
+names(aa_G_16)[1]=&quot;Running_Status&quot;
+names(aa_G_16)[2]=&quot;Goreway_Running_Frequency&quot;
+aa_G_16</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   Running_Status      Goreway_Running_Frequency
+##   &lt;chr&gt;                                   &lt;int&gt;
+## 1 Goreway_U_Status_16                       366</code></pre>
+</div>
+<div id="halton-hills-combined-cycle-plant" class="section level3">
+<h3>Halton Hills Combined Cycle Plant</h3>
+<pre class="r"><code>Halton_U_Status_16&lt;-cut(Dz_16Halton$Halton_2016_Total,breaks = c(0,100,10000),labels = c(0,1))
+Halton_U_Status_16&lt;-cbind(Dz_16Halton,Halton_U_Status_16)
+any(is.na(Halton_U_Status_16))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>Halton_U_Status_16[is.na(Halton_U_Status_16)]=0
+##head(Halton_U_Status_18)
+aa_H_16&lt;-count(Halton_U_Status_16,&quot;Halton_U_Status_16&quot;)
+names(aa_H_16)[1]=&quot;Running_Status&quot;
+names(aa_H_16)[2]=&quot;Halton_Running_Frequency&quot;
+aa_H_16</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   Running_Status     Halton_Running_Frequency
+##   &lt;chr&gt;                                 &lt;int&gt;
+## 1 Halton_U_Status_16                      366</code></pre>
+</div>
+<div id="portlands-energy-centre" class="section level3">
+<h3>Portlands Energy Centre</h3>
+<pre class="r"><code>Portland_U_Status_16&lt;-cut(Dz_16GB$Portlands_2016_Total,breaks = c(0,100,10000),labels = c(0,1))
+Portland_U_Status_16&lt;-cbind(Dz_16Portland,Portland_U_Status_16)
+any(is.na(Portland_U_Status_16))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>Portland_U_Status_16[is.na(Portland_U_Status_16)]=0
+##head(Portland_U_Status_16)
+aa_P_16&lt;-count(Portland_U_Status_16,&quot;Portland_U_Status_16&quot;)
+names(aa_P_16)[1]=&quot;Running_Status&quot;
+names(aa_P_16)[2]=&quot;Portland_U_Status_16&quot;
+aa_P_16</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   Running_Status       Portland_U_Status_16
+##   &lt;chr&gt;                               &lt;int&gt;
+## 1 Portland_U_Status_16                  366</code></pre>
+</div>
+<div id="greenfield-energy-centre" class="section level3">
+<h3>Greenfield Energy Centre</h3>
+<pre class="r"><code>Greenfield_U_Status_16&lt;-cut(Dz_16GB$GEC_2016_Total,breaks = c(0,100,10000),labels = c(0,1))
+Greenfield_U_Status_16&lt;-cbind(Dz_16Greenfeild,Greenfield_U_Status_16)
+any(is.na(Greenfield_U_Status_16))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>Greenfield_U_Status_16[is.na(Greenfield_U_Status_16)]=0
+##head(Greenfield_U_Status_16)
+aa_GEC_16&lt;-count(Greenfield_U_Status_16,&quot;Greenfield_U_Status_16&quot;)
+names(aa_GEC_16)[1]=&quot;Running_Status&quot;
+names(aa_GEC_16)[2]=&quot;Greenfield_U_Status_16&quot;
+aa_GEC_16</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   Running_Status         Greenfield_U_Status_16
+##   &lt;chr&gt;                                   &lt;int&gt;
+## 1 Greenfield_U_Status_16                    366</code></pre>
+</div>
+<div id="brighton-beach-power-station" class="section level3">
+<h3>Brighton Beach Power Station</h3>
+<pre class="r"><code>Brigton_Beach_U_Status_16&lt;-cut(Dz_16GB$Brigton_2016_Total,breaks = c(0,100,10000),labels = c(0,1))
+Brigton_Beach_U_Status_16&lt;-cbind(Dz_16Brighton,Brigton_Beach_U_Status_16)
+any(is.na(Brigton_Beach_U_Status_16))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>Brigton_Beach_U_Status_16[is.na(Brigton_Beach_U_Status_16)]=0</code></pre>
+<pre class="r"><code>aa_BB_16&lt;-count(Brigton_Beach_U_Status_16,&quot;Brigton_Beach_U_Status_16&quot;)
+names(aa_BB_16)[1]=&quot;Running_Status&quot;
+names(aa_BB_16)[2]=&quot;Brigton_Beach_U_Status_16&quot;
+aa_BB_16</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   Running_Status            Brigton_Beach_U_Status_16
+##   &lt;chr&gt;                                         &lt;int&gt;
+## 1 Brigton_Beach_U_Status_16                       366</code></pre>
+<pre class="r"><code>U_R_Status_16&lt;-cbind(aa_G_16,aa_H_16[,2],aa_P_16[,2],aa_GEC_16[,2],aa_BB_16[,2])
+names(U_R_Status_16)[2]=&quot;Goreway&quot;
+names(U_R_Status_16)[3]=&quot;Halton&quot;
+names(U_R_Status_16)[4]=&quot;Portlands&quot;
+names(U_R_Status_16)[5]=&quot;Greenfield&quot;
+names(U_R_Status_16)[6]=&quot;Brigton&quot;</code></pre>
+<p>Barplot</p>
+<pre class="r"><code>head(U_R_Status_16)</code></pre>
+<pre><code>##        Running_Status Goreway Halton Portlands Greenfield Brigton
+## 1 Goreway_U_Status_16     366    366       366        366     366</code></pre>
+<pre class="r"><code>count&lt;-as.matrix(U_R_Status_16[,-1])
+uk&lt;-c(&quot;0&quot;,&quot;1&quot;)
+barplot(count)</code></pre>
+<p><img src="Count_2016_Run__files/figure-html/unnamed-chunk-17-1.png" width="672" /> ggplot</p>
+<pre class="r"><code>library(ggplot2)
+Plant_Name &lt;-rep(c(&quot;Goreway&quot;, &quot;Halton&quot;, &quot;Portlands&quot;, &quot;Greenfield&quot;, &quot;Brigton&quot;), 2)
+
+no&lt;-c(U_R_Status_16[1,2],U_R_Status_16[1,3],U_R_Status_16[1,4],U_R_Status_16[1,5],U_R_Status_16[1,6])
+yes&lt;-c(U_R_Status_16[2,2],U_R_Status_16[2,3],U_R_Status_16[2,4],U_R_Status_16[2,5],U_R_Status_16[2,6])
+Days &lt;-c(no, yes)
+Run_type &lt;-c(rep(&quot;no&quot;, 5), rep(&quot;yes&quot;,5))
+mydata &lt;-data.frame(Plant_Name, Days)
+mydata</code></pre>
+<pre><code>##    Plant_Name Days
+## 1     Goreway  366
+## 2      Halton  366
+## 3   Portlands  366
+## 4  Greenfield  366
+## 5     Brigton  366
+## 6     Goreway   NA
+## 7      Halton   NA
+## 8   Portlands   NA
+## 9  Greenfield   NA
+## 10    Brigton   NA</code></pre>
+<pre class="r"><code>p &lt;-ggplot(mydata, aes(Plant_Name, Days))
+p +geom_bar(stat= &quot;identity&quot;,aes(fill=Run_type),position=&quot;dodge&quot;)+xlab(&quot;Plants Name&quot;)+ylab(&quot;Number of Days&quot;)+theme_bw()</code></pre>
+<p><img src="Count_2016_Run__files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+</div>
+<div id="labels-to-a-dodged-barplot" class="section level3">
+<h3>Labels to a dodged barplot</h3>
+<pre class="r"><code>ggplot(data=mydata, aes(x=Plant_Name, y=Days, fill=Run_type)) +
+  geom_bar(stat=&quot;identity&quot;, position=position_dodge())+
+  geom_text(aes(label=Days), vjust=1.6, color=&quot;white&quot;,
+            position = position_dodge(0.9), size=3.5)+
+  scale_fill_brewer(palette=&quot;Paired&quot;)+
+  theme_minimal()</code></pre>
+<pre><code>## Warning: Removed 5 rows containing missing values (geom_bar).</code></pre>
+<pre><code>## Warning: Removed 5 rows containing missing values (geom_text).</code></pre>
+<p><img src="Count_2016_Run__files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
