@@ -1,5 +1,5 @@
 ---
-title: "GasPower"
+title: "Natural Gas Power "
 output: html_document
 ---
 
@@ -19,17 +19,19 @@ output: html_document
 
 # **Natural Gas Power Generation Journal**
 
-This is a template example for lab journaling. Students in Matt Crump's Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. People not in my lab can use this too.
+Greenhouse gas emissions (GHG) has been one of the largest contribution along with technological changes to the increase of cogeneration,which repurposes heat recovered from gas-powered turbines.
+Over the last 20 years, the use of coal in electricity generation has fallen significantly, from 15% of total generation in 1996, to 11% by 2015. The use of natural gas in electricity generation has increased significantly, from 3% of total generation in 1996, to 11% by 2015
+## Frequency of update 
 
-## How to use
+1. Data had been collected from different public source directory
 
-1. fork the repo for this website and follow instructions on read me to get set up. [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
+2. Use of R and RMarkdown has been used for Blog/journal preparation.
 
-2. Blog/journal what you are doing in R, by editing the Journal.Rmd. See the [Journal page](https://crumplab.github.io/LabJournalWebsite/Journal.html) for an example of what to do to get started learning R.
+3. Most of the data are updated yearly .
 
-3. See the [links page](https://crumplab.github.io/LabJournalWebsite/Links.html) for lots of helpful links on learning R.
+4. Accuracy of data has been taken care.
 
-4. Change everything to make it your own.
+5. Graphs and analysis are for knowledge and curosity.
 
 
 </div>

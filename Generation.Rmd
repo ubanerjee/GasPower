@@ -1,0 +1,50 @@
+---
+title: "Generation"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 2
+    #code_folding: hide
+---
+  
+  Most of the combine cycle generation plant's running  in Ontario depends upon number of factors:  
+1. As system stability.
+2. During peak hours.
+3. Extreme temperature conditions
+4. Other environmental factors.
+
+Through number of day's run we can analyse various syatem performance.
+
+# Yearly Generation stats: 
+
+2018 | 7 | 23 Last compiled: `r Sys.Date()`
+
+R was used to compile data and count the number of days the plant were running as per the demand. 
+
+## Goreway 
+#### Goreway Power Station yearly generation 2010 - 2018
+ 
+ [Goreway Generation 2010-2018](Goreway_Generation_10_18.html) 
+
+## Portlands 
+#### Portlands Energy Centre yearly generation 2010 - 2018
+
+### *Comming Soon*
+
+## Greenfield 
+#### Greenfield Energy Centre yearly generation 2010 - 2018
+
+### *Comming Soon*
+
+## Brighton Beach 
+#### Brighton Beach Generating Station yearly generation 2010 - 2018
+
+### *Comming Soon*
+
+## Halton Hills 
+#### Halton Hills Combined Cycle Plant yearly generation 2010 - 2018
+
+### *Comming Soon*

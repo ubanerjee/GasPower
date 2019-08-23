@@ -1,0 +1,227 @@
+---
+title: "Count_2012_Run_"
+output: 
+  html_document:
+   code_folding: hide
+
+---
+
+```{r message=FALSE,warning=FALSE}
+library(readxl)
+library(lubridate)
+library(plyr)
+library(dplyr)
+library(tidyr)
+```
+Natural gas combine cycle plant generation depends upon market demand . Attemp has been made to calculate the number of days plant was supplying power to grid.It is a first attempt for a comparitive study with counting wind generating days
+```{r echo=TRUE}
+G12<-read_excel("GOC-2012.xlsx")
+G12$DATE <- as.Date(G12$DATE, format = "%Y-%m-%d") # Changing to Date format
+colnames(G12)[colnames(G12)=="DATE"] <- "Date"
+```
+
+```{r}
+##11$Date <- as.Date(G12$Date, format = "%Y-%m-%d") # Changing to Date format
+Dz_12Total<-G12 %>% group_by(Date) %>% summarize(Total_2012_Gen=sum(`TOTAL`),n=n())
+Dz_12Goreway<-G12 %>% group_by(Date) %>% summarize(Goreway_2012_Total=sum(`SITHE GOREWAY`),n=n())
+
+Dz_12Halton<-G12 %>% group_by(Date) %>% summarize(Halton_2012_Total=sum(HALTONHILLS),n=n())
+Dz_12Portland<-G12 %>% group_by(Date) %>% summarize(Portlands_2012_Total=sum(PORTLANDS),n=n())
+Dz_12Greenfeild<-G12 %>% group_by(Date) %>% summarize(GEC_2012_Total=sum(`GREENFIELD ENERGY CENTRE`),n=n())
+Dz_12Brighton<-G12 %>% group_by(Date) %>% summarize(Brigton_2012_Total=sum(`BRIGHTON BEACH`),n=n())
+Dz_12GB<-cbind(Dz_12Total[,-3],Dz_12Goreway[,2],Dz_12Halton[,2],Dz_12Portland[,2],Dz_12Greenfeild[,2],Dz_12Brighton[,2])
+Dz_12Goreway
+```
+
+```{r message=FALSE,warning=FALSE}
+any(is.na(Dz_12GB))
+sum(is.na(Dz_12GB))
+colSums(is.na(Dz_12GB)) 
+nrow(Dz_12GB)
+Dz_12GB<-na.omit(Dz_12GB)
+any(is.na(Dz_12GB))
+nrow(Dz_12GB)
+head(Dz_12GB)
+```
+
+
+### Goreway Power Station 
+```{r message=FALSE,warning=FALSE}
+any(is.na(Dz_12Goreway))
+sum(is.na(Dz_12Goreway))
+colSums(is.na(Dz_12Goreway)) 
+nrow(Dz_12Goreway)
+Dz_12Goreway<-na.omit(Dz_12Goreway)
+any(is.na(Dz_12Goreway))
+nrow(Dz_12Goreway)
+head(Dz_12Goreway)
+Goreway_U_Status_12<-cut(Dz_12Goreway$Goreway_2012_Total,breaks = c(0,100,50000),labels = c(0,1))
+Goreway_U_Status_12<-cbind(Dz_12Goreway,Goreway_U_Status_12)
+#Goreway_U_Status_12
+any(is.na(Goreway_U_Status_12))
+
+
+```
+
+```{r}
+Goreway_U_Status_12[is.na(Goreway_U_Status_12)]=0
+head(Goreway_U_Status_12)
+```
+
+```{r}
+##aa_G_12<-count(Goreway_U_Status_12,"Goreway_U_Status_12")
+aa_G_12<-Goreway_U_Status_12 %>% count(Goreway_U_Status_12)
+names(aa_G_12)[1]="Running_Status"
+names(aa_G_12)[2]="Goreway_Run"
+aa_G_12
+```
+
+### Halton Hills Combined Cycle Plant
+```{r}
+
+any(is.na(Dz_12Halton))
+sum(is.na(Dz_12Halton))
+colSums(is.na(Dz_12Halton)) 
+nrow(Dz_12Halton)
+Dz_12Halton<-na.omit(Dz_12Halton)
+any(is.na(Dz_12Halton))
+nrow(Dz_12Halton)
+head(Dz_12Halton)
+
+Halton_U_Status_12<-cut(Dz_12Halton$Halton_2012_Total,breaks = c(0,100,50000),labels = c(0,1))
+Halton_U_Status_12<-cbind(Dz_12Halton,Halton_U_Status_12)
+Halton_U_Status_12[is.na(Halton_U_Status_12)]=0
+#Halton_U_Status_12
+
+#aa_H_10<-count(Halton_U_Status_10,"Halton_U_Status_10")
+aa_H_12<-Halton_U_Status_12 %>% count(Halton_U_Status_12)
+names(aa_H_12)[1]="Running_Status"
+names(aa_H_12)[2]="Halton_Run"
+aa_H_12
+
+
+
+```
+### Portlands Energy Centre
+```{r}
+any(is.na(Dz_12Portland))
+sum(is.na(Dz_12Portland))
+colSums(is.na(Dz_12Portland)) 
+nrow(Dz_12Portland)
+Dz_12Portland<-na.omit(Dz_12Portland)
+any(is.na(Dz_12Portland))
+nrow(Dz_12Portland)
+head(Dz_12Portland)
+
+Portlands_U_Status_12<-cut(Dz_12Portland$Portlands_2012_Total,breaks = c(0,100,50000),labels = c(0,1))
+Portlands_U_Status_12<-cbind(Dz_12Portland,Portlands_U_Status_12)
+Portlands_U_Status_12[is.na(Portlands_U_Status_12)]=0
+#Portlands_U_Status_12
+
+#aa_P_10<-count(Portlands_U_Status_10,"Portlands_U_Status_10")
+aa_P_12<-Portlands_U_Status_12 %>% count(Portlands_U_Status_12)
+names(aa_P_12)[1]="Running_Status"
+names(aa_P_12)[2]="Portland_Run"
+aa_P_12
+
+```
+### Greenfield Energy Centre
+```{r}
+any(is.na(Dz_12Greenfeild))
+sum(is.na(Dz_12Greenfeild))
+colSums(is.na(Dz_12Greenfeild)) 
+nrow(Dz_12Greenfeild)
+Dz_12Greenfeild<-na.omit(Dz_12Greenfeild)
+any(is.na(Dz_12Greenfeild))
+nrow(Dz_12Greenfeild)
+head(Dz_12Greenfeild)
+
+Greenfeild_U_Status_12<-cut(Dz_12Greenfeild$GEC_2012_Total,breaks = c(0,100,50000),labels = c(0,1))
+Greenfeild_U_Status_12<-cbind(Dz_12Greenfeild,Greenfeild_U_Status_12)
+Greenfeild_U_Status_12[is.na(Greenfeild_U_Status_12)]= 0
+#Greenfeild_U_Status_12
+
+#aa_GEC_10<-count(Greenfeild_U_Status_10,"Greenfeild_U_Status_10")
+aa_GEC_12<-Greenfeild_U_Status_12 %>% count(Greenfeild_U_Status_12)
+names(aa_GEC_12)[1]="Running_Status"
+names(aa_GEC_12)[2]="Greenfeild_Run"
+aa_GEC_12
+
+```
+
+### Brighton Beach Generating Station
+```{r}
+any(is.na(Dz_12Brighton))
+sum(is.na(Dz_12Brighton))
+colSums(is.na(Dz_12Brighton)) 
+nrow(Dz_12Brighton)
+Dz_12Brighton<-na.omit(Dz_12Brighton)
+any(is.na(Dz_12Brighton))
+nrow(Dz_12Brighton)
+head(Dz_12Brighton)
+
+Brighton_U_Status_12<-cut(Dz_12Brighton$Brigton_2012_Total,breaks = c(0,100,50000),labels = c(0,1))
+Brighton_U_Status_12<-cbind(Dz_12Brighton,Brighton_U_Status_12)
+Brighton_U_Status_12[is.na(Brighton_U_Status_12)]=0
+#Brighton_U_Status_12
+
+#aa_BB_10<-count(Brighton_U_Status_10,"Brighton_U_Status_10")
+aa_BB_12<-Brighton_U_Status_12 %>% count(Brighton_U_Status_12)
+names(aa_BB_12)[1]="Running_Status"
+names(aa_BB_12)[2]="Brighton_Run"
+aa_BB_12
+
+
+```
+
+
+```{r  message=FALSE,warning=FALSE}
+U_R_Status_12<-cbind(aa_G_12,aa_H_12[,2],aa_P_12[,2],aa_GEC_12[,2],aa_BB_12[,2])
+names(U_R_Status_12)[2]="Goreway"
+names(U_R_Status_12)[3]="Halton"
+names(U_R_Status_12)[4]="Portlands"
+names(U_R_Status_12)[5]="Greenfield"
+names(U_R_Status_12)[6]="Brighton"
+```
+Barplot
+```{r}
+count<-as.matrix(U_R_Status_12[,-1])
+barplot(count)
+```
+
+
+
+
+
+### ggplot
+```{r message=FALSE,warning=FALSE}
+library(ggplot2)
+Plant_Name <-rep(c("Goreway", "Halton", "Portlands", "Greenfield", "Brighton"), 2)
+
+No_Run<-c(U_R_Status_12[1,2],U_R_Status_12[1,3],U_R_Status_12[1,4],U_R_Status_12[1,5],U_R_Status_12[1,6])
+Run<-c(U_R_Status_12[2,2],U_R_Status_12[2,3],U_R_Status_12[2,4],U_R_Status_12[2,5],U_R_Status_12[2,6])
+Days <-c(No_Run, Run)
+Run_type <-c(rep("No_Run", 5), rep("Run",5))
+mydata <-data.frame(Plant_Name, Days)
+mydata
+
+
+p <-ggplot(mydata, aes(Plant_Name, Days))
+p +geom_bar(stat= "identity",aes(fill=Run_type),position="dodge")+xlab("Plants Name")+ylab("Number of Days")+theme_bw()
+
+
+
+```
+### Labels to a dodged barplot
+
+```{r}
+ggplot(data=mydata, aes(x=Plant_Name, y=Days, fill=Run_type)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  geom_text(aes(label=Days), vjust=1.6, color="white",
+            position = position_dodge(0.9), size=3.5)+
+  scale_fill_brewer(palette="Paired")+
+  theme_minimal()
+```
+
+
+

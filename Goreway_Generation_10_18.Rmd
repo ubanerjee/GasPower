@@ -1,0 +1,347 @@
+---
+title: "Generation Of Goreway Power Station from the year 2010 - 2018"
+output: 
+  html_document:
+   code_folding: hide
+
+---
+
+### Generation data downloaded from IESO site ( http://www.ieso.ca/en/Power-Data/Data-Directory)
+
+```{r message = FALSE,warning=FALSE}
+library(rlang)
+library(tidyverse)
+library(lubridate)
+library(zoo)
+library(readxl)
+```
+
+```{r}
+G10<-read_excel("GOC-2010.xlsx")
+head(G10,n=5) # Head gives the first five rows of the data . Its gives generating units available .
+```
+
+```{r}
+#tail(G10,5) # Tail gives last five rows can be useful when data from external source
+```
+```{r}
+#str(G10) # Str() tells how many rows (observations in statistical R ) and columns ( variables R ) it contains, along with type of data gives 
+```
+```{r}
+#summary(G10$`SITHE GOREWAY`) # summary function gets the statistical summary of the dataset by just running on either a column or the complete dataset
+```
+
+```{r message = FALSE,warning=FALSE}
+class(G10) # gives class/ data type of argument
+```
+
+```{r message = FALSE,warning=FALSE}
+dim(G10) # Dimensions of the data set 
+```
+
+```{r}
+#is.na(G10)
+```
+```{r message = FALSE,warning=FALSE}
+table(is.na(G10)) # Gives total number of missing values 
+```
+```{r}
+#colSums(is.na(G10)) # checking variables in which missing values are present
+```
+
+```{r message = FALSE,warning=FALSE}
+sum(is.na(G10$`SITHE GOREWAY`)) # shows number of missing values in `SITHE GOREWAY` 
+```
+
+```{r }
+mean(G10$`SITHE GOREWAY`) # Missing values hinders in calculation in a dataset. As only one missing values we try to calculate mean                                                                                                                              generation 
+
+mean(G10$`SITHE GOREWAY`,na.rm=TRUE) # TRUE ignores the missing values whereas .omit removes the missing values 
+```
+
+```{r}
+summary(G10$`SITHE GOREWAY`,na.rm=TRUE)
+```
+## Analysis of the data columns
+### 1. Date needs to be changed to Date format .
+
+```{r}
+G10$DATE <- as.Date(G10$DATE, format = "%Y-%m-%d") # Changing to Date format
+```
+
+### 2. As the given data is in hourly we are grouping hourly into daily . 
+###    Total daily generation gives a broad picture of the data . Here we considering Sithe Goreway ( Goreway Power Station ) for study purpose.
+
+```{r}
+Dz_10<-G10 %>% group_by(DATE) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_10) 
+```
+```{r message = FALSE,warning=FALSE}
+#library(ggplot2)
+#plot<-ggplot(Dz_10, aes(x=~Date,y=~Goreway_Total)) + geom_line()
+#plot
+```
+
+```{r message = FALSE,warning=FALSE}
+#library(plotly)
+#plot_ly(Dz_10, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines+markers')
+#plot_ly(Dz_10, x=~DATE) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2010')
+```
+
+### Similarly grouping hourly MW to daily was performed from the year 2011 to 2018
+### Year 2011
+
+```{r}
+G11<-read_excel("GOC-2011.xlsx")
+G11$DATE <- as.Date(G11$DATE, format = "%Y-%m-%d") # Changing to Date format
+Dz_11<-G11 %>% group_by(DATE) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_11)
+```
+##plot_ly(Dz_11, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines+markers')
+```{r}
+#plot_ly(Dz_11, x=~DATE) %>% add_trace(y=~Goreway_Total, mode='lines') %>% layout(title='Goreway Generation 2011')
+
+```
+
+
+
+
+### Year 2012
+```{r}
+G12<-read_excel("GOC-2012.xlsx")
+G12$DATE <- as.Date(G12$DATE, format = "%Y-%m-%d") # Changing to Date format
+Dz_12<-G12 %>% group_by(DATE) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_12)
+```
+
+```{r}
+#plot_ly(Dz_12, x=~DATE) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2012')
+```
+
+### Year 2013
+
+```{r}
+G13<-read_excel("GOC-2013.xlsx")
+G13$Date <- as.Date(G13$Date, format = "%Y-%m-%d") # Changing to Date format
+Dz_13<-G13 %>% group_by(Date) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_13)
+```
+
+```{r}
+#plot_ly(Dz_13, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2013')
+```
+
+### Year 2014
+
+```{r}
+G14<-read_excel("GOC-2014.xlsx")
+G14$Date <- as.Date(G14$Date, format = "%Y-%m-%d") # Changing to Date format
+Dz_14<-G14 %>% group_by(Date) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+head(Dz_14)
+```
+
+```{r}
+#plot_ly(Dz_14, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2014')
+```
+### Year 2015
+
+```{r}
+G15<-read_excel("GOC-2015.xlsx")
+G15$Date <- as.Date(G15$Date, format = "%Y-%m-%d") # Changing to Date format
+Dz_15<-G15 %>% group_by(Date) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_15)
+```
+
+```{r}
+#plot_ly(Dz_15, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2015')
+```
+### Year 2016
+
+```{r}
+G16<-read_excel("GOC-2016.xlsx")
+G16$Date <- as.Date(G16$Date, format = "%Y-%m-%d") # Changing to Date format
+Dz_16<-G16 %>% group_by(Date) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_16)
+
+```
+
+```{r}
+#plot_ly(Dz_16, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2016')
+```
+
+### Year 2017
+```{r}
+G17<-read_excel("GOC-2017.xlsx")
+G17$Date <- as.Date(G17$Date, format = "%Y-%m-%d") # Changing to Date format
+Dz_17<-G17 %>% group_by(Date) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_17)
+```
+
+```{r}
+#plot_ly(Dz_17, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2017')
+```
+
+### Year 2018
+
+```{r}
+G18<-read_excel("GOC-2018.xlsx")
+Dz_18<-G18 %>% group_by(Date) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY-G11`+`SITHE GOREWAY-G12`+`SITHE GOREWAY-G13`+`SITHE GOREWAY-G15`),n=n())
+head(Dz_18)
+```
+
+```{r}
+#plot_ly(Dz_18, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines') %>% layout(title='Goreway Generation 2018')
+```
+
+
+
+## Combining the data from 2013 to 2018 and making a single data file
+
+```{r}
+Dz_a13<-rbind(Dz_13,Dz_14,Dz_15,Dz_16,Dz_17,Dz_18)
+
+str(Dz_a13)
+```
+
+### Date variable name from 2010 to 2012 are all caps .
+### Changing as per “Date” which is from 2013 to 2018.
+### 2010
+```{r}
+G10<-read_excel("GOC-2010.xlsx")
+G10$DATE <- as.Date(G10$DATE, format = "%Y-%m-%d") # Changing to Date format
+Dz_10<-G10 %>% group_by(DATE) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+colnames(Dz_10)[colnames(Dz_10)=="DATE"] <- "Date"
+head(Dz_10)
+```
+### 2011
+
+```{r}
+G11<-read_excel("GOC-2011.xlsx")
+G11$DATE <- as.Date(G11$DATE, format = "%Y-%m-%d") # Changing to Date format
+Dz_11<-G11 %>% group_by(DATE) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+colnames(Dz_11)[colnames(Dz_11)=="DATE"] <- "Date"
+head(Dz_11)
+```
+### 2012
+
+```{r}
+G12<-read_excel("GOC-2012.xlsx")
+G12$DATE <- as.Date(G12$DATE, format = "%Y-%m-%d") # Changing to Date format
+Dz_12<-G12 %>% group_by(DATE) %>% summarize(Goreway_Total=sum(`SITHE GOREWAY`),n=n())
+colnames(Dz_12)[colnames(Dz_12)=="DATE"] <- "Date"
+head(Dz_12)
+```
+### Combining the data from 2010 to 2012 and making a single data file 
+
+```{r}
+Dz_a10<-rbind(Dz_10,Dz_11,Dz_12)
+head(Dz_a10)
+```
+
+### Combining the data from 2010 to 2018 and making a single data file
+
+```{r}
+Dz_y18<-rbind(Dz_a10,Dz_a13)
+head(Dz_y18)
+```
+
+```{r}
+dim(Dz_y18) # Dimensions of the data set
+```
+
+```{r}
+#table(is.na(Dz_y18)) # Gives total number of missing values 
+```
+```{r}
+#colSums(is.na(Dz_y18)) # checking variables in which missing values are present
+```
+```{r}
+#write.table(Dz_y18,file="Output/Goreway_1.csv",sep=",",col.names=TRUE,row.names=F,append=FALSE)
+```
+
+```{r}
+Gy_18<-na.omit(Dz_y18)
+head(Gy_18,n=2)
+```
+```{r}
+colSums(is.na(Gy_18)) # checking variables in which missing values are present
+```
+
+### Plotting the generation from 2010 till 2018
+
+```{r}
+library(ggplot2)
+
+plot<-ggplot(Gy_18, aes(x=Date,y=Goreway_Total)) + geom_line()
+plot
+```
+```{r}
+is.data.frame(Gy_18)
+```
+
+
+```{r}
+#library(plotly)
+#plot_ly(Gy_18, x=~Date,y=~Goreway_Total)
+
+#plot_ly(Gy_18, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines')
+
+```
+
+```{r}
+Dz_y18$Year <- format(Dz_y18$Date, format = "%Y")
+Dz_y18$Month_num <- format(Dz_y18$Date, format = "%m")
+Dz_y18$Day <- format(Dz_y18$Date, format = "%d")
+
+head(Dz_y18)
+```
+## Plotting the generation from 2010 till 2018
+
+```{r}
+library(ggplot2)
+
+plot<-ggplot(Gy_18, aes(x=Date,y=Goreway_Total)) + geom_line()
+plot
+```
+
+```{r}
+is.data.frame(Gy_18)
+```
+
+```{r}
+#library(plotly)
+#plot_ly(Gy_18, x=~Date,y=~Goreway_Total)
+
+#plot_ly(Gy_18, x=~Date) %>% add_trace(y=~Goreway_Total,mode='lines')
+```
+###Extract Year,Month and Day and store in separate columns
+
+```{r}
+Dz_y18$Year <- format(Dz_y18$Date, format = "%Y")
+Dz_y18$Month_num <- format(Dz_y18$Date, format = "%m")
+Dz_y18$Day <- format(Dz_y18$Date, format = "%d")
+
+head(Dz_y18)
+```
+
+```{r}
+Gy_18<-na.omit(Dz_y18)
+head(Gy_18,n=2)
+```
+
+```{r}
+p_year<-ggplot(Gy_18, aes(x=Year,y=Goreway_Total)) + geom_bar(stat="identity", fill="steelblue")
+p_year
+```
+
+
+```{r}
+Gy_18$Month_num<-as.factor(Gy_18$Month_num)
+str(Gy_18)
+```
+
+```{r}
+p_month<-ggplot(Gy_18, aes(x=Month_num,y=Goreway_Total)) + geom_bar(stat="identity", fill="steelblue")
+p_month
+```
+

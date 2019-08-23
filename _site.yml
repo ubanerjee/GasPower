@@ -3,9 +3,13 @@ navbar:
   title: "Gas Power"
   left:
     - text: "Home"
-      href: index.html
-    - text: "Journal"
-      href: Journal.html
+      href:  index.html
+    - text: "Generation"
+      href:  Generation.html
+    - text: "Run Stats"
+      href:  Journal.html
     - text: "Links"
-      href: Links.html
-output_dir: "docs"
+      href:  Links.html
+  output_dir: "docs"
+   
+   
