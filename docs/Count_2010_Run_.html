@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Count_2010_Run_.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Gas Power</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Generation.html">Generation</a>
+</li>
+<li>
+  <a href="Run_Stats.html">Run Stats</a>
+</li>
+<li>
+  <a href="About.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<hr />
+<p>title: “Count_2010_Run_” output: html_document: code_folding: hide</p>
+<pre class="r"><code>library(readxl)
+library(lubridate)
+library(plyr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)</code></pre>
+<p>Natural gas combine cycle plant generation depends upon market demand . Attemp has been made to calculate the number of days plant was supplying power to grid.It is a first attempt for a comparitive study with counting wind generating days</p>
+<pre class="r"><code>G10&lt;-read_excel(&quot;GOC-2010.xlsx&quot;)</code></pre>
+<pre><code>## New names:
+## * `` -&gt; ...3</code></pre>
+<pre class="r"><code>G10$DATE &lt;- as.Date(G10$DATE, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+colnames(G10)[colnames(G10)==&quot;DATE&quot;] &lt;- &quot;Date&quot;</code></pre>
+<pre class="r"><code>##11$Date &lt;- as.Date(G12$Date, format = &quot;%Y-%m-%d&quot;) # Changing to Date format
+Dz_10Total&lt;-G10 %&gt;% group_by(Date) %&gt;% summarize(Total_2010_Gen=sum(`TOTAL`),n=n())
+Dz_10Goreway&lt;-G10 %&gt;% group_by(Date) %&gt;% summarize(Goreway_2010_Total=sum(`SITHE GOREWAY`),n=n())
+
+Dz_10Halton&lt;-G10 %&gt;% group_by(Date) %&gt;% summarize(Halton_2010_Total=sum(HALTONHILLS),n=n())
+Dz_10Portland&lt;-G10 %&gt;% group_by(Date) %&gt;% summarize(Portlands_2010_Total=sum(PORTLANDS),n=n())
+Dz_10Greenfeild&lt;-G10 %&gt;% group_by(Date) %&gt;% summarize(GEC_2010_Total=sum(`GREENFIELD ENERGY CENTRE`),n=n())
+Dz_10Brighton&lt;-G10 %&gt;% group_by(Date) %&gt;% summarize(Brigton_2010_Total=sum(`BRIGHTON BEACH`),n=n())
+Dz_10GB&lt;-cbind(Dz_10Total[,-3],Dz_10Goreway[,2],Dz_10Halton[,2],Dz_10Portland[,2],Dz_10Greenfeild[,2],Dz_10Brighton[,2])
+Dz_10Goreway</code></pre>
+<pre><code>## # A tibble: 366 x 3
+##    Date       Goreway_2010_Total     n
+##    &lt;date&gt;                  &lt;dbl&gt; &lt;int&gt;
+##  1 2010-01-01                  0    24
+##  2 2010-01-02                  0    24
+##  3 2010-01-03                 11    24
+##  4 2010-01-04               6423    24
+##  5 2010-01-05               3168    24
+##  6 2010-01-06               5513    24
+##  7 2010-01-07               6166    24
+##  8 2010-01-08               5968    24
+##  9 2010-01-09                432    24
+## 10 2010-01-10                  0    24
+## # ... with 356 more rows</code></pre>
+<pre class="r"><code>any(is.na(Dz_10GB))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>sum(is.na(Dz_10GB))</code></pre>
+<pre><code>## [1] 7</code></pre>
+<pre class="r"><code>colSums(is.na(Dz_10GB)) </code></pre>
+<pre><code>##                 Date       Total_2010_Gen   Goreway_2010_Total 
+##                    1                    1                    1 
+##    Halton_2010_Total Portlands_2010_Total       GEC_2010_Total 
+##                    1                    1                    1 
+##   Brigton_2010_Total 
+##                    1</code></pre>
+<pre class="r"><code>nrow(Dz_10GB)</code></pre>
+<pre><code>## [1] 366</code></pre>
+<pre class="r"><code>Dz_10GB&lt;-na.omit(Dz_10GB)
+any(is.na(Dz_10GB))</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>nrow(Dz_10GB)</code></pre>
+<pre><code>## [1] 365</code></pre>
+<pre class="r"><code>head(Dz_10GB)</code></pre>
+<pre><code>##         Date Total_2010_Gen Goreway_2010_Total Halton_2010_Total
+## 1 2010-01-01         400470                  0                 0
+## 2 2010-01-02         430273                  0                 0
+## 3 2010-01-03         455882                 11                 0
+## 4 2010-01-04         481308               6423                 0
+## 5 2010-01-05         482227               3168                 0
+## 6 2010-01-06         483561               5513                 0
+##   Portlands_2010_Total GEC_2010_Total Brigton_2010_Total
+## 1                    0              0                  0
+## 2                 1489              0                  0
+## 3                    0              1               2713
+## 4                 3574           4075               2688
+## 5                 3210           2196                  0
+## 6                 3319              0               2365</code></pre>
+<div id="goreway-power-station" class="section level2">
+<h2>Goreway Power Station</h2>
+<pre class="r"><code>any(is.na(Dz_10Goreway))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>sum(is.na(Dz_10Goreway))</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>colSums(is.na(Dz_10Goreway)) </code></pre>
+<pre><code>##               Date Goreway_2010_Total                  n 
+##                  1                  1                  0</code></pre>
+<pre class="r"><code>nrow(Dz_10Goreway)</code></pre>
+<pre><code>## [1] 366</code></pre>
+<pre class="r"><code>Dz_10Goreway&lt;-na.omit(Dz_10Goreway)
+any(is.na(Dz_10Goreway))</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>nrow(Dz_10Goreway)</code></pre>
+<pre><code>## [1] 365</code></pre>
+<pre class="r"><code>head(Dz_10Goreway)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Goreway_2010_Total     n
+##   &lt;date&gt;                  &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01                  0    24
+## 2 2010-01-02                  0    24
+## 3 2010-01-03                 11    24
+## 4 2010-01-04               6423    24
+## 5 2010-01-05               3168    24
+## 6 2010-01-06               5513    24</code></pre>
+<pre class="r"><code>Goreway_U_Status_10&lt;-cut(Dz_10Goreway$Goreway_2010_Total,breaks = c(0,100,50000),labels = c(0,1))
+Goreway_U_Status_10&lt;-cbind(Dz_10Goreway,Goreway_U_Status_10)
+#Goreway_U_Status_10
+any(is.na(Goreway_U_Status_10))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>Goreway_U_Status_10[is.na(Goreway_U_Status_10)]=0
+head(Goreway_U_Status_10)</code></pre>
+<pre><code>##         Date Goreway_2010_Total  n Goreway_U_Status_10
+## 1 2010-01-01                  0 24                   0
+## 2 2010-01-02                  0 24                   0
+## 3 2010-01-03                 11 24                   0
+## 4 2010-01-04               6423 24                   1
+## 5 2010-01-05               3168 24                   1
+## 6 2010-01-06               5513 24                   1</code></pre>
+<pre class="r"><code>##aa_G_10&lt;-count(Goreway_U_Status_10,&quot;Goreway_U_Status_10&quot;)
+aa_G_10&lt;-Goreway_U_Status_10 %&gt;% count(Goreway_U_Status_10)
+names(aa_G_10)[1]=&quot;Running_Status&quot;
+names(aa_G_10)[2]=&quot;Goreway_Run&quot;
+aa_G_10</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Running_Status Goreway_Run
+##   &lt;fct&gt;                &lt;int&gt;
+## 1 0                       65
+## 2 1                      300</code></pre>
+</div>
+<div id="halton-hills-generating-station" class="section level2">
+<h2>Halton Hills Generating Station</h2>
+<pre class="r"><code>any(is.na(Dz_10Halton))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>sum(is.na(Dz_10Halton))</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>colSums(is.na(Dz_10Halton)) </code></pre>
+<pre><code>##              Date Halton_2010_Total                 n 
+##                 1                 1                 0</code></pre>
+<pre class="r"><code>nrow(Dz_10Halton)</code></pre>
+<pre><code>## [1] 366</code></pre>
+<pre class="r"><code>Dz_10Halton&lt;-na.omit(Dz_10Halton)
+any(is.na(Dz_10Halton))</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>nrow(Dz_10Halton)</code></pre>
+<pre><code>## [1] 365</code></pre>
+<pre class="r"><code>head(Dz_10Halton)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Halton_2010_Total     n
+##   &lt;date&gt;                 &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01                 0    24
+## 2 2010-01-02                 0    24
+## 3 2010-01-03                 0    24
+## 4 2010-01-04                 0    24
+## 5 2010-01-05                 0    24
+## 6 2010-01-06                 0    24</code></pre>
+<pre class="r"><code>Halton_U_Status_10&lt;-cut(Dz_10Halton$Halton_2010_Total,breaks = c(0,100,50000),labels = c(0,1))
+Halton_U_Status_10&lt;-cbind(Dz_10Halton,Halton_U_Status_10)
+Halton_U_Status_10[is.na(Halton_U_Status_10)]=0
+#Halton_U_Status_10
+
+#aa_H_10&lt;-count(Halton_U_Status_10,&quot;Halton_U_Status_10&quot;)
+aa_H_10&lt;-Halton_U_Status_10 %&gt;% count(Halton_U_Status_10)
+names(aa_H_10)[1]=&quot;Running_Status&quot;
+names(aa_H_10)[2]=&quot;Halton_Run&quot;
+aa_H_10</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Running_Status Halton_Run
+##   &lt;fct&gt;               &lt;int&gt;
+## 1 0                     213
+## 2 1                     152</code></pre>
+</div>
+<div id="portlands-energy-centre" class="section level2">
+<h2>Portlands Energy Centre</h2>
+<pre class="r"><code>any(is.na(Dz_10Portland))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>sum(is.na(Dz_10Portland))</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>colSums(is.na(Dz_10Portland)) </code></pre>
+<pre><code>##                 Date Portlands_2010_Total                    n 
+##                    1                    1                    0</code></pre>
+<pre class="r"><code>nrow(Dz_10Portland)</code></pre>
+<pre><code>## [1] 366</code></pre>
+<pre class="r"><code>Dz_10Portland&lt;-na.omit(Dz_10Portland)
+any(is.na(Dz_10Portland))</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>nrow(Dz_10Portland)</code></pre>
+<pre><code>## [1] 365</code></pre>
+<pre class="r"><code>head(Dz_10Portland)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Portlands_2010_Total     n
+##   &lt;date&gt;                    &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01                    0    24
+## 2 2010-01-02                 1489    24
+## 3 2010-01-03                    0    24
+## 4 2010-01-04                 3574    24
+## 5 2010-01-05                 3210    24
+## 6 2010-01-06                 3319    24</code></pre>
+<pre class="r"><code>Portlands_U_Status_10&lt;-cut(Dz_10Portland$Portlands_2010_Total,breaks = c(0,100,50000),labels = c(0,1))
+Portlands_U_Status_10&lt;-cbind(Dz_10Portland,Portlands_U_Status_10)
+Portlands_U_Status_10[is.na(Portlands_U_Status_10)]=0
+#Portlands_U_Status_10
+
+#aa_P_10&lt;-count(Portlands_U_Status_10,&quot;Portlands_U_Status_10&quot;)
+aa_P_10&lt;-Portlands_U_Status_10 %&gt;% count(Portlands_U_Status_10)
+names(aa_P_10)[1]=&quot;Running_Status&quot;
+names(aa_P_10)[2]=&quot;Portland_Run&quot;
+aa_P_10</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Running_Status Portland_Run
+##   &lt;fct&gt;                 &lt;int&gt;
+## 1 0                       120
+## 2 1                       245</code></pre>
+</div>
+<div id="greenfield-energy-centre" class="section level2">
+<h2>Greenfield Energy Centre</h2>
+<pre class="r"><code>any(is.na(Dz_10Greenfeild))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>sum(is.na(Dz_10Greenfeild))</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>colSums(is.na(Dz_10Greenfeild)) </code></pre>
+<pre><code>##           Date GEC_2010_Total              n 
+##              1              1              0</code></pre>
+<pre class="r"><code>nrow(Dz_10Greenfeild)</code></pre>
+<pre><code>## [1] 366</code></pre>
+<pre class="r"><code>Dz_10Greenfeild&lt;-na.omit(Dz_10Greenfeild)
+any(is.na(Dz_10Greenfeild))</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>nrow(Dz_10Greenfeild)</code></pre>
+<pre><code>## [1] 365</code></pre>
+<pre class="r"><code>head(Dz_10Greenfeild)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       GEC_2010_Total     n
+##   &lt;date&gt;              &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01              0    24
+## 2 2010-01-02              0    24
+## 3 2010-01-03              1    24
+## 4 2010-01-04           4075    24
+## 5 2010-01-05           2196    24
+## 6 2010-01-06              0    24</code></pre>
+<pre class="r"><code>Greenfeild_U_Status_10&lt;-cut(Dz_10Greenfeild$GEC_2010_Total,breaks = c(0,100,50000),labels = c(0,1))
+Greenfeild_U_Status_10&lt;-cbind(Dz_10Greenfeild,Greenfeild_U_Status_10)
+Greenfeild_U_Status_10[is.na(Greenfeild_U_Status_10)]= 0
+#Greenfeild_U_Status_10
+
+#aa_GEC_10&lt;-count(Greenfeild_U_Status_10,&quot;Greenfeild_U_Status_10&quot;)
+aa_GEC_10&lt;-Greenfeild_U_Status_10 %&gt;% count(Greenfeild_U_Status_10)
+names(aa_GEC_10)[1]=&quot;Running_Status&quot;
+names(aa_GEC_10)[2]=&quot;Greenfeild_Run&quot;
+aa_GEC_10</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Running_Status Greenfeild_Run
+##   &lt;fct&gt;                   &lt;int&gt;
+## 1 0                          91
+## 2 1                         274</code></pre>
+</div>
+<div id="brighton-beach-power-station" class="section level2">
+<h2>Brighton Beach Power Station</h2>
+<pre class="r"><code>any(is.na(Dz_10Brighton))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>sum(is.na(Dz_10Brighton))</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>colSums(is.na(Dz_10Brighton)) </code></pre>
+<pre><code>##               Date Brigton_2010_Total                  n 
+##                  1                  1                  0</code></pre>
+<pre class="r"><code>nrow(Dz_10Brighton)</code></pre>
+<pre><code>## [1] 366</code></pre>
+<pre class="r"><code>Dz_10Brighton&lt;-na.omit(Dz_10Brighton)
+any(is.na(Dz_10Brighton))</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>nrow(Dz_10Brighton)</code></pre>
+<pre><code>## [1] 365</code></pre>
+<pre class="r"><code>head(Dz_10Brighton)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   Date       Brigton_2010_Total     n
+##   &lt;date&gt;                  &lt;dbl&gt; &lt;int&gt;
+## 1 2010-01-01                  0    24
+## 2 2010-01-02                  0    24
+## 3 2010-01-03               2713    24
+## 4 2010-01-04               2688    24
+## 5 2010-01-05                  0    24
+## 6 2010-01-06               2365    24</code></pre>
+<pre class="r"><code>Brighton_U_Status_10&lt;-cut(Dz_10Brighton$Brigton_2010_Total,breaks = c(0,100,50000),labels = c(0,1))
+Brighton_U_Status_10&lt;-cbind(Dz_10Brighton,Brighton_U_Status_10)
+Brighton_U_Status_10[is.na(Brighton_U_Status_10)]=0
+#Brighton_U_Status_10
+
+#aa_BB_10&lt;-count(Brighton_U_Status_10,&quot;Brighton_U_Status_10&quot;)
+aa_BB_10&lt;-Brighton_U_Status_10 %&gt;% count(Brighton_U_Status_10)
+names(aa_BB_10)[1]=&quot;Running_Status&quot;
+names(aa_BB_10)[2]=&quot;Brighton_Run&quot;
+aa_BB_10</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Running_Status Brighton_Run
+##   &lt;fct&gt;                 &lt;int&gt;
+## 1 0                       202
+## 2 1                       163</code></pre>
+<pre class="r"><code>U_R_Status_10&lt;-cbind(aa_G_10,aa_H_10[,2],aa_P_10[,2],aa_GEC_10[,2],aa_BB_10[,2])
+names(U_R_Status_10)[2]=&quot;Goreway&quot;
+names(U_R_Status_10)[3]=&quot;Halton&quot;
+names(U_R_Status_10)[4]=&quot;Portlands&quot;
+names(U_R_Status_10)[5]=&quot;Greenfield&quot;
+names(U_R_Status_10)[6]=&quot;Brigton&quot;</code></pre>
+<p>Barplot</p>
+<pre class="r"><code>count&lt;-as.matrix(U_R_Status_10[,-1])
+barplot(count)</code></pre>
+<p><img src="Count_2010_Run__files/figure-html/unnamed-chunk-13-1.png" width="672" /> ##ggplot</p>
+<pre class="r"><code>Plant_Name &lt;- rep(c(&quot;Goreway&quot;, &quot;Halton&quot;, &quot;Portlands&quot;, &quot;Greenfield&quot;, &quot;Brighton&quot;), 2)
+No_Run &lt;-c(U_R_Status_10[1,2],U_R_Status_10[1,3],U_R_Status_10[1,4],U_R_Status_10[1,5],U_R_Status_10[1,6])
+Run&lt;-c(U_R_Status_10[2,2],U_R_Status_10[2,3],U_R_Status_10[2,4],U_R_Status_10[2,5],U_R_Status_10[2,6])
+Days &lt;-c(No_Run, Run)
+Run_type &lt;-c(rep(&quot;No_Run&quot;, 5), rep(&quot;Run&quot;,5))
+mydata &lt;-data.frame(Plant_Name, Days)
+mydata</code></pre>
+<pre><code>##    Plant_Name Days
+## 1     Goreway   65
+## 2      Halton  213
+## 3   Portlands  120
+## 4  Greenfield   91
+## 5    Brighton  202
+## 6     Goreway  300
+## 7      Halton  152
+## 8   Portlands  245
+## 9  Greenfield  274
+## 10   Brighton  163</code></pre>
+<pre class="r"><code>p &lt;-ggplot(mydata, aes(Plant_Name, Days))
+p +geom_bar(stat= &quot;identity&quot;,aes(fill=Run_type),position=&quot;dodge&quot;)+xlab(&quot;Plants Name&quot;)+ylab(&quot;Number of Days&quot;)+theme_bw()</code></pre>
+<p><img src="Count_2010_Run__files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div id="labels-to-a-dodged-barplot" class="section level3">
+<h3>Labels to a dodged barplot</h3>
+<pre class="r"><code>ggplot(data=mydata, aes(x=Plant_Name, y=Days, fill=Run_type)) +
+  geom_bar(stat=&quot;identity&quot;, position=position_dodge())+
+  geom_text(aes(label=Days), vjust=1.6, color=&quot;white&quot;,
+            position = position_dodge(0.9), size=3.5)+
+  scale_fill_brewer(palette=&quot;Paired&quot;)+
+  theme_minimal()</code></pre>
+<p><img src="Count_2010_Run__files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
